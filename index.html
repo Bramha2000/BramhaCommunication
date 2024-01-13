@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bramhacommunication and IT pvt ltd Portfolio</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('back3.jpg'); /*  'background-image.jpg' */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #fff;
+        }
+
+        header {
+            background-image: url(headerBack.png);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            padding: 40px 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        #header-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+
+        nav {
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 10px;
+            transition: color 0.3s ease; /* Add transition for smooth color change */
+        }
+
+        nav a:hover {
+            color: #00bcd4; /* Change the color on hover */
+        }
+
+        section {
+            padding: 20px;
+            margin: 10px;
+        }
+
+        .about-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        form {
+            max-width: 600px;
+            margin: auto;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #555;
+            border-radius: 4px;
+            box-sizing: border-box;
+            background-color: #444;
+            color: #fff;
+        }
+
+        button {
+            background-color: #111;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #111;
+            color: #fff;
+            text-align: center;
+            font-size: 10px;
+            padding: 7px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 3%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Bramhacommunication and IT pvt ltd</h1>
+        <img id="header-img" src="logo.jpeg" alt="Company Logo">
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <div class="about-container">
+        <p>Welcome to Bramhacommunication and IT Pvt Ltd, your trusted partner in customer care services. With a relentless commitment to excellence, we stand at the forefront of delivering unparalleled customer support and solutions.</p>
+        <p>With an 80-people seating capacity and state-of-the-art facilities, we create an environment that fosters efficiency and productivity. Our commitment extends beyond the call center as we prioritize the well-being of our team, offering a comfortable work environment, including a canteen facility for a rejuvenating break.</p>
+        <p>Thank you for choosing Bramhacommunication and IT Pvt Ltd. We look forward to exceeding your expectations and building a partnership based on trust, reliability, and exceptional service.</p>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <p>We offer a range of customer care services including:</p>
+        <ul>
+            <li>24/7 Customer Support</li>
+            <li>Issue Resolution</li>
+            <li>Feedback Collection</li>
+            <li>Customized Solutions</li>
+            <li>80 People Seating Capacity</li>
+            <li>Canteen Facility</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id ="contactForm" onsubmit="sendEmail()">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="phno">Phone:</label>
+            <input type="phone" id="phno" name="phno" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; Bramhacommunication and IT pvt ltd. All rights reserved.</p>
+    </footer>
+
+    
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    
+        <script>
+            document.addEventListener('contextmenu',event=>event.preventDefault())
+        function sendEmail()
+        {
+            var senderMail = document.getElementById("email").value;
+            var body = "Hello "+document.getElementById("name").value+" this side.<br>I want information about your company i got this contact form from website.<br>I would like to contact you .<br>Here are my contact details <br>Phone no "+document.getElementById("phno").value+"<br>Email id : "+senderMail+"<br>Message : "+document.getElementById("message").value+" ";
+            
+            Email.send({
+                SecureToken : "20634142-fdf3-4af2-a169-eadc65826ad1",
+                To : "bramhacommit@gmail.com",
+                From : "bramhacommit@gmail.com",
+                Subject : "This is the subject",
+                Body : body
+            }).then(
+                message => alert("Message Sended. Owner will contact you soon")
+                );
+            }
+        </script>
+        
+    </body>
+</html>
+
+
